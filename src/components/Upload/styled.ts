@@ -1,13 +1,27 @@
 import styled from 'styled-components';
 
-export const UploadContainer = styled.div`
+interface ImageProps {
+    image: string | null;
+}
+
+export const UploadContainer = styled.div<ImageProps>`
     color: red;
     border-bottom: 2px solid #555;
     display: flex;
     justify-content: center;
-`;
 
-export const UploadContent = styled.div``;
+    ${props =>
+        props.image
+            ? `
+        background-image: url(${props.image});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    `
+            : `
+    background: none;
+    `}
+`;
 
 export const ButtonUpload = styled.button`
     margin-top: 100px;

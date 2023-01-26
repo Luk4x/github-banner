@@ -9,5 +9,5 @@ export const MainStyled = styled.main`
     height: 65vh;
     background: ${props => props.theme.color['blue-900']};
     display: grid;
-    grid-template-rows: 1.2fr 2fr;
+    grid-template-rows: 1fr 1fr;
 `;
