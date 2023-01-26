@@ -1,11 +1,10 @@
-import { Input } from '../Input';
-import { ConfigStyled } from './styled';
+import { ConfigStyled, InputStyled } from './styled';
 
 export function Config() {
     return (
         <ConfigStyled>
-            <Input placeholder="Apresentação" />
-            <Input placeholder="Cargo" />
+            <InputStyled type="text" placeholder="Apresentação" />
+            <InputStyled type="text" placeholder="Cargo" />
         </ConfigStyled>
     );
 }

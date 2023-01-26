@@ -23,7 +23,7 @@ export function Upload() {
                     onComplete={files => handleImage(files)}
                 >
                     {({ onClick }) => (
-                        <ButtonUpload onClick={onClick}>Upload a file...</ButtonUpload>
+                        <ButtonUpload onClick={onClick}>Suba uma Imagem</ButtonUpload>
                     )}
                 </UploadButton>
             )}

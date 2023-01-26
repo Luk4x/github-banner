@@ -22,8 +22,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      background-color: ${props => props.theme.color.blue};
-      color: ${props => props.theme.color.white};
+      background-color: ${props => props.theme.color.backgroundBase};
+      color: ${props => props.theme.color.textBase};
       min-height: 100vh;
       font-size: 1rem;
     }

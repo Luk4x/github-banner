@@ -7,7 +7,9 @@ export const MainStyled = styled.main`
     transform: translate(-50%, -50%);
     width: 60vw;
     height: 65vh;
-    background: ${props => props.theme.color['blue-900']};
+    background: ${props => props.theme.color.backgroundLevel1};
     display: grid;
     grid-template-rows: 1fr 1fr;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 `;

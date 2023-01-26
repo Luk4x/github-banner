@@ -9,6 +9,9 @@ export const UploadContainer = styled.div<ImageProps>`
     border-bottom: 2px solid #555;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 
     ${props =>
         props.image
@@ -19,17 +22,16 @@ export const UploadContainer = styled.div<ImageProps>`
         background-size: cover;
     `
             : `
-    background: none;
+    background-color: ${props.theme.color.highlightColor};
     `}
 `;
 
 export const ButtonUpload = styled.button`
-    margin-top: 100px;
-    margin-bottom: 100px;
     background: transparent;
-    padding: 1rem;
-    border: 1px solid ${props => props.theme.color.gray};
-    color: ${props => props.theme.color.white};
+    border: 1px solid ${props => props.theme.color.borderBase};
+    color: ${props => props.theme.color.textBase};
     border-radius: 6px;
     width: 12.5rem;
+    height: 5rem;
+    cursor: pointer;
 `;

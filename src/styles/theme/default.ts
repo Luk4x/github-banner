@@ -1,8 +1,9 @@
 export const defaultTheme = {
     color: {
-        white: '#FFF',
-        blue: '#0D1117',
-        'blue-900': '#161B22',
-        gray: '#E7E5DF'
+        textBase: '#FFF',
+        backgroundBase: '#0D1117',
+        backgroundLevel1: '#161B22',
+        highlightColor: '#58A6FF',
+        borderBase: '#E7E5DF'
     }
 };
