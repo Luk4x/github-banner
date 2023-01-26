@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -21,8 +21,10 @@ export const GlobalStyle = createGlobalStyle`
         list-style-type: none;
     }
 
-    body{
+    body {
       background-color: ${props => props.theme.color.blue};
       color: ${props => props.theme.color.white};
+      min-height: 100vh;
+      font-size: 1rem;
     }
-`
+`;
