@@ -14,3 +14,6 @@
 -   adicionar mais funcionalidades baseadas no site de referência;
 -   adicionar mais temas;
 -   melhorar o fluxo de upload de imagem;
+-   explorar plataforma de upload: storaged files, account, plans, acceppted files
+-   sigleton pattern
+-   limitar qualidade da imagem (e redimensionar se necessário)
