@@ -4,8 +4,8 @@
 
 -   colocar layout do figma em prática ✔️;
 -   upload da imagem ✔️;
--   preencher os dados da imagem conforme os inputs;
--   animar os dados da imagem;
+-   preencher os dados da imagem conforme os inputs ✔️;
+-   animar os dados da imagem ✔️;
 -   exportar imagem como gif;
 
 ### etapas extras:
