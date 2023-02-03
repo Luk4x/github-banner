@@ -13,22 +13,17 @@
         "@types/node": "18.11.18",
         "@types/react": "18.0.27",
         "@types/react-dom": "18.0.10",
-        "concat-stream": "^2.0.0",
-        "dom-to-image": "^2.6.0",
         "file-saver": "^2.0.5",
-        "gif-encoder": "^0.7.2",
-        "jszip": "^3.10.1",
         "next": "13.1.5",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-uploader": "^3.3.0",
+        "rekapi": "^2.3.0",
         "styled-components": "^5.3.6",
         "typescript": "4.9.4"
     },
     "devDependencies": {
-        "@types/dom-to-image": "^2.6.4",
         "@types/file-saver": "^2.0.5",
-        "@types/gifencoder": "^2.0.1",
         "@types/styled-components": "^5.1.26",
         "babel-plugin-styled-components": "^2.0.7"
     }

@@ -10,6 +10,5 @@ export const MainStyled = styled.main`
     background: ${props => props.theme.color.backgroundLevel1};
     display: grid;
     grid-template-rows: 1fr 1fr;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 8px;
 `;

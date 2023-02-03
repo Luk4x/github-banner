@@ -15,5 +15,5 @@
 -   adicionar mais temas;
 -   melhorar o fluxo de upload de imagem;
 -   explorar plataforma de upload: storaged files, account, plans, acceppted files
--   sigleton pattern
+-   sigleton pattern <!-- https://vercel.com/guides/getting-started-with-nextjs-typescript-stripe -->
 -   limitar qualidade da imagem (e redimensionar se necessário)
