@@ -15,3 +15,9 @@
 - adicionar mais temas;
 - melhorar o fluxo de upload de imagem;
 - limitar qualidade da imagem (e redimensionar se necessário)
+
+[API — Freeimage.host](https://freeimage.host/page/api)
+
+[imgix - Pricing - Start Free](https://imgix.com/pricing)
+
+[Imgur API](https://apidocs.imgur.com/)
