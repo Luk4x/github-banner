@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
-import { UploadContainer, ButtonUpload, UserData } from './styled';
-import { saveAs } from 'file-saver';
+import { UploadContainer, ButtonUpload } from './styled';
 
 interface UploadProps {
     bannerData: {
@@ -11,17 +10,17 @@ interface UploadProps {
 
 export function Upload({ bannerData }: UploadProps) {
     const svgRef = useRef(null);
-    const [image, setImage] = useState<null | string>(null);
+    const [bgImageUrl, setBgImageUrl] = useState<null | string>(null);
 
-    const convertToGif = () => {
-        if (svgRef.current !== null) {
+    const DownloadSvg = async () => {
+        if (svgRef.current) {
             const svg = svgRef.current;
 
-            //get svg source.
+            // get svg source.
             const serializer = new XMLSerializer();
             let source = serializer.serializeToString(svg);
 
-            //add name spaces.
+            // add name spaces.
             if (!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)) {
                 source = source.replace(
                     /^<svg/,
@@ -35,13 +34,13 @@ export function Upload({ bannerData }: UploadProps) {
                 );
             }
 
-            //add xml declaration
+            // add xml declaration
             source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
 
-            //convert svg source to URI data scheme.
+            // convert svg source to URI data scheme
             const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(source);
 
-            //set url value to a element's href attribute.
+            // generate download link
             const link = document.createElement('a');
             link.download = 'Github-Banner.svg';
             link.href = url;
@@ -51,15 +50,22 @@ export function Upload({ bannerData }: UploadProps) {
 
     return (
         <>
-            <UploadContainer image={null}>
-                {!image ? (
+            <UploadContainer>
+                {!bgImageUrl ? (
                     <ButtonUpload
                         type="file"
                         accept="image/*"
                         onChange={e => {
-                            if (e.target.files !== null) {
-                                const bgImage = e.target.files[0];
-                                setImage(URL.createObjectURL(bgImage));
+                            if (e.target.files) {
+                                const imageFile = e.target.files[0];
+
+                                // converting the background image uploaded to DataURL
+                                const reader = new FileReader();
+                                reader.onloadend = () => {
+                                    reader.result &&
+                                        setBgImageUrl(reader.result.toString());
+                                };
+                                reader.readAsDataURL(imageFile);
                             }
                         }}
                     />
@@ -72,7 +78,7 @@ export function Upload({ bannerData }: UploadProps) {
                         version="1.1"
                         ref={svgRef}
                     >
-                        {image && <image href={image} width="100%" />}
+                        {bgImageUrl && <image href={bgImageUrl} width="100%" />}
                         <path id="path">
                             <animate
                                 attributeName="d"
@@ -84,8 +90,8 @@ export function Upload({ bannerData }: UploadProps) {
                             />
                         </path>
                         <text
-                            font-size="28"
-                            font-family="Montserrat"
+                            fontSize="28"
+                            fontFamily="Montserrat"
                             fill="hsla(36, 95%, 85%, 1)"
                             textAnchor="middle"
                             x="50%"
@@ -96,8 +102,8 @@ export function Upload({ bannerData }: UploadProps) {
                             </textPath>
                         </text>
                         <text
-                            font-size="22"
-                            font-family="Montserrat"
+                            fontSize="22"
+                            fontFamily="Montserrat"
                             fill="hsla(36, 95%, 85%, 1)"
                             textAnchor="middle"
                             x="50%"
@@ -110,7 +116,7 @@ export function Upload({ bannerData }: UploadProps) {
             </UploadContainer>
             <button
                 style={{ position: 'absolute', right: '-80px', top: '-40px' }}
-                onClick={convertToGif}
+                onClick={DownloadSvg}
             >
                 Download
             </button>
