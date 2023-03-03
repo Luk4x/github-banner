@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ConfigStyled = styled.section`
     width: 866px;
     margin-top: 70px;
+    // margin-bottom: 50px;
     border-radius: 6px;
     padding: 1rem;
     background: ${props => props.theme.color.backgroundLevel1};

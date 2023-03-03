@@ -1,8 +1,8 @@
 import { ButtonStyled } from './styled';
-import { DownloadSimple } from 'phosphor-react';
+import { DownloadSimple, Image } from 'phosphor-react';
 
 interface ButtonProps {
-    onClick: () => void;
+    onClick?: () => void;
     buttonName: string;
 }
 

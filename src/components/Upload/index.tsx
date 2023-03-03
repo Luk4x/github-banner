@@ -1,5 +1,7 @@
-import { useState, useRef, useContext } from 'react';
+import { Image } from 'phosphor-react';
+import { useState, useContext } from 'react';
 import { GitHubBannerContext } from 'src/context/contextGitBanner';
+import { Button } from '../Button';
 import { UploadContainer, ButtonUpload } from './styled';
 
 export function Upload() {
@@ -10,12 +12,17 @@ export function Upload() {
         <UploadContainer>
             {!bgImageUrl ? (
                 <ButtonUpload>
+                    <span>Upload</span>
+                    <Image />
+                    <label htmlFor="uploadImage" />
                     <input
                         type="file"
                         accept="image/*"
+                        id="uploadImage"
                         onChange={e => {
                             if (e.target.files) {
                                 const imageFile = e.target.files[0];
+
                                 // converting the background image uploaded to DataURL
                                 const reader = new FileReader();
                                 reader.onloadend = () => {
