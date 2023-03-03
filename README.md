@@ -6,23 +6,17 @@
 -   upload da imagem ✔️;
 -   preencher os dados da imagem conforme os inputs ✔️;
 -   animar os dados ✔️;
--   exportar imagem;
+-   exportar imagem ✔️;
 
 ### etapas extras:
 
+-   dimensionar a imagem verticalmente;
+-   estilizar buttonUpload;
 -   melhorar o layout;
 -   adicionar mais funcionalidades baseadas no site de referência;
 -   adicionar mais temas;
 -   melhorar o fluxo de upload de imagem;
 -   limitar qualidade da imagem (e redimensionar se necessário)
-
-[API — Freeimage.host](https://freeimage.host/page/api)
-
-[imgix - Pricing - Start Free](https://imgix.com/pricing)
-
-[Imgur API](https://apidocs.imgur.com/)
-
-https://imgbb.com
 
 <!--
 svg ref:

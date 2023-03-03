@@ -1,10 +1,21 @@
 import styled from 'styled-components';
 
 export const ConfigStyled = styled.section`
-    margin-top: 20px;
-    padding: 10px;
+    width: 866px;
+    margin-top: 70px;
+    border-radius: 6px;
+    padding: 1rem;
+    background: ${props => props.theme.color.backgroundLevel1};
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    div {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
 `;
 
 export const InputStyled = styled.input`
