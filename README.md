@@ -45,6 +45,7 @@ me:
 
 <!--
 svg ref:
+https://developer.mozilla.org/en-US/docs/Web/SVG
 https://www.youtube.com/watch?v=VNTmT1qMgp0&list=PLlAbYrWSYTiOufRJOeP73o4GR9N1afQdP
 https://www.youtube.com/watch?v=4cEMgap9wpk
 https://www.youtube.com/watch?v=sHK_9oDiimU

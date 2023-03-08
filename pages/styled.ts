@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as HoverCard from '@radix-ui/react-hover-card';
 
 export const Container = styled.div`
     display: flex;
@@ -64,42 +63,6 @@ export const Collaborators = styled.div`
         display: flex;
         justify-content: center;
     }
-`;
-
-export const HoverCardContent = styled(HoverCard.Content)`
-    border-radius: 6;
-    padding: 20;
-    width: 300;
-    background: white;
-`;
-
-export const Flex = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-export const PresentationBase = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    cursor: pointer;
-    img {
-        object-fit: cover;
-        clip-path: circle();
-        align-items: center;
-    }
-`;
-
-export const PresentationLucas = styled(PresentationBase)`
-    // background: url(${props => props.theme.background.luk4xBackground.src}) no-repeat
-    //     center;
-`;
-
-export const PresentationLuiz = styled(PresentationBase)`
-    // background: url(${props => props.theme.background.luizBackground.src}) no-repeat
-    //     center;
 `;
 
 export const Footer = styled.footer`

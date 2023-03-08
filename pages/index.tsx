@@ -4,17 +4,15 @@ import {
     Container,
     Presentation,
     Collaborators,
-    Footer,
-    PresentationLucas,
-    PresentationLuiz,
-    HoverCardContent,
-    Flex
+    Footer
 } from './styled';
 import { Upload } from 'src/components/Upload';
 import { Config } from 'src/components/Config';
 import { GithubLogo, Star, Info, GitPullRequest, Coffee } from 'phosphor-react';
-import Image from 'next/image';
-import * as HoverCard from '@radix-ui/react-hover-card';
+
+import { HoverCard } from 'src/components/HoverCard/HoverCard';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 
 const Home: React.FC = () => {
     return (
@@ -31,52 +29,36 @@ const Home: React.FC = () => {
                 </Presentation>
                 <Collaborators>
                     <h3>Colaboradores</h3>
-                    <div>
-                        <HoverCard.Root>
-                            <HoverCard.Trigger>
-                                <PresentationLuiz>
-                                    <Image
-                                        src="https://github.com/luizfelipe63.png"
-                                        alt=""
-                                        width={100}
-                                        height={100}
-                                    />
-                                </PresentationLuiz>
-                            </HoverCard.Trigger>
-                            <HoverCard.Portal>
-                                <HoverCardContent>
-                                    <HoverCard.Arrow />
-                                    <Flex>
-                                        <Image
-                                            src="https://github.com/luizfelipe63.png"
-                                            alt=""
-                                            width={100}
-                                            height={100}
-                                        />
-                                    </Flex>
-                                    <Flex>
-                                        <div>
-                                            <span>Luiz Felipe</span>
-                                            <span>Luizfelipe63</span>
-                                        </div>
-                                        <p>
-                                            Components, icons, colors, and templates for
-                                            building high-quality, accessible UI. Free and
-                                            open-source.
-                                        </p>
-                                    </Flex>
-                                </HoverCardContent>
-                            </HoverCard.Portal>
-                        </HoverCard.Root>
-                        {/* <PresentationLuiz>
-                            <Image
-                                src="https://github.com/luizfelipe63.png"
-                                alt=""
-                                width={100}
-                                height={100}
-                            />
-                        </PresentationLuiz> */}
-                    </div>
+                    <Carousel
+                        showStatus={false}
+                        transitionTime={2000}
+                        showThumbs={false}
+                        showArrows={false}
+                        showIndicators={false}
+                        infiniteLoop
+                        autoPlay
+                    >
+                        <HoverCard githubName="Luk4x">
+                            <div>
+                                <span>Luiz Felipe</span>
+                                <span>Luizfelipe63</span>
+                            </div>
+                            <p>
+                                Components, icons, colors, and templates for building
+                                high-quality, accessible UI. Free and open-source.
+                            </p>
+                        </HoverCard>
+                        <HoverCard githubName="luizfelipe63">
+                            <div>
+                                <span>Luiz Felipe</span>
+                                <span>Luizfelipe63</span>
+                            </div>
+                            <p>
+                                Components, icons, colors, and templates for building
+                                high-quality, accessible UI. Free and open-source.
+                            </p>
+                        </HoverCard>
+                    </Carousel>
                 </Collaborators>
                 <Footer>
                     <button>
