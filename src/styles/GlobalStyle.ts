@@ -25,5 +25,6 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${props => props.theme.color.backgroundBase};
       color: ${props => props.theme.color.textBase};
       font-size: 1rem;
+      padding-left: 400px;
     }
 `;

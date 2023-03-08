@@ -1,10 +1,25 @@
-import { useContext, ChangeEvent } from 'react';
+import { useContext } from 'react';
 import { GitHubBannerContext } from 'src/context/contextGitBanner';
 import { Button } from '../Button';
-import { ConfigStyled, InputStyled } from './styled';
+import {
+    ConfigStyled,
+    InputStyled,
+    Editor,
+    EditorTabList,
+    EditorTab,
+    EditorTabContent,
+    PopoverRoot,
+    PopoverTrigger,
+    PopoverPortal,
+    PopoverContent,
+    PopoverArrow,
+    ToggleRoot
+} from './styled';
+import { Palette, TextT, TextBolder } from 'phosphor-react';
 
 export function Config() {
-    const { updateBannerData, bannerRef, bannerData } = useContext(GitHubBannerContext);
+    const { updateBannerData, bannerRef, bannerData, updateBannerStyle, bannerStyle } =
+        useContext(GitHubBannerContext);
 
     const downloadSvg = async () => {
         if (bannerRef.current) {
@@ -47,24 +62,79 @@ export function Config() {
                     <InputStyled
                         type="text"
                         placeholder="Apresentação"
-                        onChange={e =>
+                        onChange={e => {
                             updateBannerData({
                                 ...bannerData,
                                 presentation: e.target.value
-                            })
-                        }
+                            });
+
+                            e.target.value
+                                ? e.target.setAttribute('input1-state', 'active')
+                                : e.target.removeAttribute('input1-state');
+                        }}
                     />
                 </div>
                 <div>
                     <InputStyled
                         type="text"
                         placeholder="Cargo"
-                        onChange={e =>
-                            updateBannerData({ ...bannerData, office: e.target.value })
-                        }
+                        onChange={e => {
+                            updateBannerData({ ...bannerData, office: e.target.value });
+
+                            e.target.value
+                                ? e.target.setAttribute('input2-state', 'active')
+                                : e.target.removeAttribute('input2-state');
+                        }}
                     />
                 </div>
             </div>
+            <Editor defaultValue="colorTab">
+                <EditorTabList aria-label="Customize seu banner">
+                    <EditorTab value="colorTab">
+                        <Palette />
+                    </EditorTab>
+                    <EditorTab value="textTab">
+                        <TextT />
+                    </EditorTab>
+                </EditorTabList>
+                <EditorTabContent value="colorTab">
+                    <div>cores</div>
+                </EditorTabContent>
+                <EditorTabContent value="textTab">
+                    <div>
+                        <PopoverRoot>
+                            <PopoverTrigger>
+                                <TextBolder />
+                            </PopoverTrigger>
+                            <PopoverPortal>
+                                <PopoverContent sideOffset={5}>
+                                    <ToggleRoot
+                                        onPressedChange={() =>
+                                            updateBannerStyle({
+                                                ...bannerStyle,
+                                                boldTitle: !bannerStyle.boldTitle
+                                            })
+                                        }
+                                    >
+                                        Título
+                                    </ToggleRoot>
+                                    <ToggleRoot
+                                        onPressedChange={() =>
+                                            updateBannerStyle({
+                                                ...bannerStyle,
+                                                boldSubTitle: !bannerStyle.boldSubTitle
+                                            })
+                                        }
+                                    >
+                                        SubTítulo
+                                    </ToggleRoot>
+                                    <PopoverArrow />
+                                </PopoverContent>
+                            </PopoverPortal>
+                        </PopoverRoot>
+                    </div>
+                </EditorTabContent>
+            </Editor>
             <Button onClick={downloadSvg} buttonName="Download" />
         </ConfigStyled>
     );

@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import { UploadContainer, ButtonUpload } from './styled';
 
 export function Upload() {
-    const { bannerData, bannerRef } = useContext(GitHubBannerContext);
+    const { bannerData, bannerRef, bannerStyle } = useContext(GitHubBannerContext);
     const [bgImageUrl, setBgImageUrl] = useState<null | string>(null);
 
     return (
@@ -56,7 +56,8 @@ export function Upload() {
                     </path>
                     <text
                         fontSize="28"
-                        fontFamily="Montserrat"
+                        fontFamily="Roboto"
+                        fontWeight={bannerStyle.boldTitle ? 'bold' : 'normal'}
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"
                         x="50%"
@@ -68,7 +69,8 @@ export function Upload() {
                     </text>
                     <text
                         fontSize="22"
-                        fontFamily="Montserrat"
+                        fontFamily="Roboto"
+                        fontWeight={bannerStyle.boldSubTitle ? 'bold' : 'normal'}
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"
                         x="50%"
