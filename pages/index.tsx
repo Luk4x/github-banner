@@ -4,15 +4,17 @@ import {
     Container,
     Presentation,
     Collaborators,
-    Footer
+    Footer,
+    PresentationBase,
+    Followers
 } from './styled';
 import { Upload } from 'src/components/Upload';
 import { Config } from 'src/components/Config';
 import { GithubLogo, Star, Info, GitPullRequest, Coffee } from 'phosphor-react';
 
-import { HoverCard } from 'src/components/HoverCard/HoverCard';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import Image from 'next/image';
 
 const Home: React.FC = () => {
     return (
@@ -38,26 +40,55 @@ const Home: React.FC = () => {
                         infiniteLoop
                         autoPlay
                     >
-                        <HoverCard githubName="Luk4x">
+                        <PresentationBase>
+                            <header>
+                                <div>
+                                    <strong>Luiz Felipe</strong>
+                                    <span>@luizfelipe63</span>
+                                </div>
+                                <Image
+                                    src="https://github.com/luk4x.png"
+                                    width={65}
+                                    height={65}
+                                    alt=""
+                                />
+                            </header>
                             <div>
-                                <span>Luiz Felipe</span>
-                                <span>Luizfelipe63</span>
+                                <p>
+                                    Components, icons, colors, and templates for building
+                                    high-quality, accessible UI. Free and open-source.
+                                </p>
                             </div>
-                            <p>
-                                Components, icons, colors, and templates for building
-                                high-quality, accessible UI. Free and open-source.
-                            </p>
-                        </HoverCard>
-                        <HoverCard githubName="luizfelipe63">
+                            <Followers>
+                                <span>0 Following</span>
+                                <span>2,900 Followers</span>
+                            </Followers>
+                        </PresentationBase>
+                        <PresentationBase>
+                            <header>
+                                <div>
+                                    <strong>Luiz Felipe</strong>
+                                    <span>@luizfelipe63</span>
+                                </div>
+                                <Image
+                                    src="https://github.com/luizfelipe63.png"
+                                    width={65}
+                                    height={65}
+                                    alt=""
+                                />
+                            </header>
+
                             <div>
-                                <span>Luiz Felipe</span>
-                                <span>Luizfelipe63</span>
+                                <p>
+                                    Components, icons, colors, and templates for building
+                                    high-quality, accessible UI. Free and open-source.
+                                </p>
                             </div>
-                            <p>
-                                Components, icons, colors, and templates for building
-                                high-quality, accessible UI. Free and open-source.
-                            </p>
-                        </HoverCard>
+                            <Followers>
+                                <span>0 Following</span>
+                                <span>2,900 Followers</span>
+                            </Followers>
+                        </PresentationBase>
                     </Carousel>
                 </Collaborators>
                 <Footer>

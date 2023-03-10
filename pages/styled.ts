@@ -52,10 +52,9 @@ export const Collaborators = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 
     h3 {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     div {
@@ -63,6 +62,46 @@ export const Collaborators = styled.div`
         display: flex;
         justify-content: center;
     }
+`;
+
+export const PresentationBase = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    // justify-content: center;
+    // width: 100%;
+    // height: 150px;
+    cursor: pointer;
+
+    p {
+        max-width: 300px;
+        text-align: left;
+    }
+
+    header {
+        display: flex;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    img {
+        object-fit: contain;
+        clip-path: circle();
+    }
+`;
+
+export const Followers = styled.div`
+    display: flex;
+    gap: 1rem;
+`;
+
+export const Flex = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 
 export const Footer = styled.footer`

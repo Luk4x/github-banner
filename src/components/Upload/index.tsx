@@ -56,7 +56,8 @@ export function Upload() {
                     </path>
                     <text
                         fontSize="28"
-                        fontFamily="Roboto"
+                        fontFamily="Arial, Helvetica, sans-serif"
+                        fontStyle={bannerStyle.italicTitle ? 'italic' : 'normal'}
                         fontWeight={bannerStyle.boldTitle ? 'bold' : 'normal'}
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"
@@ -69,7 +70,8 @@ export function Upload() {
                     </text>
                     <text
                         fontSize="22"
-                        fontFamily="Roboto"
+                        fontFamily="Arial, Helvetica, sans-serif"
+                        fontStyle={bannerStyle.italicSubTitle ? 'italic' : 'normal'}
                         fontWeight={bannerStyle.boldSubTitle ? 'bold' : 'normal'}
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"

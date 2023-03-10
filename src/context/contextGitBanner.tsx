@@ -8,13 +8,15 @@ interface BannerDataProps {
 interface BannerStyleProps {
     boldTitle: boolean;
     boldSubTitle: boolean;
+    italicTitle: boolean;
+    italicSubTitle: boolean;
 }
 
 interface GitHubBannerContextType {
-    bannerData: BannerDataProps;
-    updateBannerData: (bannerData: BannerDataProps) => void;
     bannerRef: any;
+    bannerData: BannerDataProps;
     bannerStyle: BannerStyleProps;
+    updateBannerData: (bannerData: BannerDataProps) => void;
     updateBannerStyle: (bannerStyle: BannerStyleProps) => void;
 }
 
@@ -31,7 +33,9 @@ export function GitHubBannerContextProvider({
     const bannerRef = useRef(null);
     const [bannerStyle, setBannerStyle] = useState({
         boldTitle: false,
-        boldSubTitle: false
+        boldSubTitle: false,
+        italicTitle: false,
+        italicSubTitle: false
     });
 
     function updateBannerData(bannerData: BannerDataProps) {

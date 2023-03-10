@@ -1,24 +1,22 @@
-import { useContext } from 'react';
-import { GitHubBannerContext } from 'src/context/contextGitBanner';
-import { Button } from '../Button';
 import {
     ConfigStyled,
     InputStyled,
     Editor,
     EditorTabList,
     EditorTab,
-    EditorTabContent,
-    PopoverRoot,
-    PopoverTrigger,
-    PopoverPortal,
-    PopoverContent,
-    PopoverArrow,
-    ToggleRoot
+    EditorTabContent
 } from './styled';
-import { Palette, TextT, TextBolder } from 'phosphor-react';
+
+import { useContext } from 'react';
+import { GitHubBannerContext } from 'src/context/contextGitBanner';
+
+import { Button } from '../Button';
+import { EditorItem } from '../EditorItem';
+
+import { Palette, TextT, TextBolder, TextItalic } from 'phosphor-react';
 
 export function Config() {
-    const { updateBannerData, bannerRef, bannerData, updateBannerStyle, bannerStyle } =
+    const { bannerRef, updateBannerData, bannerData, updateBannerStyle, bannerStyle } =
         useContext(GitHubBannerContext);
 
     const downloadSvg = async () => {
@@ -102,36 +100,42 @@ export function Config() {
                 </EditorTabContent>
                 <EditorTabContent value="textTab">
                     <div>
-                        <PopoverRoot>
-                            <PopoverTrigger>
-                                <TextBolder />
-                            </PopoverTrigger>
-                            <PopoverPortal>
-                                <PopoverContent sideOffset={5}>
-                                    <ToggleRoot
-                                        onPressedChange={() =>
-                                            updateBannerStyle({
-                                                ...bannerStyle,
-                                                boldTitle: !bannerStyle.boldTitle
-                                            })
-                                        }
-                                    >
-                                        Título
-                                    </ToggleRoot>
-                                    <ToggleRoot
-                                        onPressedChange={() =>
-                                            updateBannerStyle({
-                                                ...bannerStyle,
-                                                boldSubTitle: !bannerStyle.boldSubTitle
-                                            })
-                                        }
-                                    >
-                                        SubTítulo
-                                    </ToggleRoot>
-                                    <PopoverArrow />
-                                </PopoverContent>
-                            </PopoverPortal>
-                        </PopoverRoot>
+                        <EditorItem
+                            titleState={bannerStyle.boldTitle}
+                            subTitleState={bannerStyle.boldSubTitle}
+                            onTitleToggle={() =>
+                                updateBannerStyle({
+                                    ...bannerStyle,
+                                    boldTitle: !bannerStyle.boldTitle
+                                })
+                            }
+                            onSubTitleToggle={() =>
+                                updateBannerStyle({
+                                    ...bannerStyle,
+                                    boldSubTitle: !bannerStyle.boldSubTitle
+                                })
+                            }
+                        >
+                            <TextBolder />
+                        </EditorItem>
+                        <EditorItem
+                            titleState={bannerStyle.italicTitle}
+                            subTitleState={bannerStyle.italicSubTitle}
+                            onTitleToggle={() =>
+                                updateBannerStyle({
+                                    ...bannerStyle,
+                                    italicTitle: !bannerStyle.italicTitle
+                                })
+                            }
+                            onSubTitleToggle={() =>
+                                updateBannerStyle({
+                                    ...bannerStyle,
+                                    italicSubTitle: !bannerStyle.italicSubTitle
+                                })
+                            }
+                        >
+                            <TextItalic />
+                        </EditorItem>
                     </div>
                 </EditorTabContent>
             </Editor>
