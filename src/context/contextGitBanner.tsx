@@ -6,11 +6,50 @@ interface BannerDataProps {
 }
 
 interface BannerStyleProps {
-    boldTitle: boolean;
-    boldSubTitle: boolean;
-    italicTitle: boolean;
-    italicSubTitle: boolean;
+    bold: {
+        title: {
+            active: boolean;
+            type: string;
+        };
+        subTitle: {
+            active: boolean;
+            type: string;
+        };
+    };
+    italic: {
+        title: {
+            active: boolean;
+            type: string;
+        };
+        subTitle: {
+            active: boolean;
+            type: string;
+        };
+    };
 }
+
+const bannerStyleSchema = {
+    bold: {
+        title: {
+            active: false,
+            type: 'normal'
+        },
+        subTitle: {
+            active: false,
+            type: 'normal'
+        }
+    },
+    italic: {
+        title: {
+            active: false,
+            type: 'normal'
+        },
+        subTitle: {
+            active: false,
+            type: 'normal'
+        }
+    }
+};
 
 interface GitHubBannerContextType {
     bannerRef: any;
@@ -31,12 +70,7 @@ export function GitHubBannerContextProvider({
 }: GitHubBannerContextProviderProps) {
     const [bannerData, setBannerData] = useState({ presentation: '', office: '' });
     const bannerRef = useRef(null);
-    const [bannerStyle, setBannerStyle] = useState({
-        boldTitle: false,
-        boldSubTitle: false,
-        italicTitle: false,
-        italicSubTitle: false
-    });
+    const [bannerStyle, setBannerStyle] = useState(bannerStyleSchema);
 
     function updateBannerData(bannerData: BannerDataProps) {
         setBannerData(bannerData);

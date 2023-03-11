@@ -9,7 +9,9 @@ export const UploadContainer = styled.div`
     border-top-right-radius: 8px;
     min-width: 866px;
     height: 350px;
-    background-color: ${props => props.theme.color.backgroundLevel1};
+    background: url(${props => props.theme.background.uploadBackground.src})
+        ${props => props.theme.color.backgroundLevel1} center no-repeat;
+    background-size: cover;
 `;
 
 export const ButtonUpload = styled(ButtonStyled)`
@@ -17,6 +19,10 @@ export const ButtonUpload = styled(ButtonStyled)`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    &:hover {
+        filter: brightness(90%);
+    }
 
     span {
         transform: translateX(34px);

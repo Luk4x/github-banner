@@ -32,7 +32,7 @@ export const ButtonStyled = styled.button`
     }
 
     &:hover {
-        filter: brightness(105%);
+        filter: brightness(90%);
 
         span {
             color: transparent;

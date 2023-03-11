@@ -30,6 +30,7 @@
     donate/suporte; (tooltip)
 
 -   }
+-   ao mouse entrar na div de edição, remover a animação;
 -   consumir api do skillicons.dev;
 -   consumir api de imagens, analisar as cores da imagem upada, e mostrar recomendações de cores pro texto;
 -   adicionar mais funcionalidades baseadas no site de referência;

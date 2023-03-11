@@ -12,45 +12,49 @@ import { defaultTheme } from 'src/styles/theme/default';
 
 interface EditorItemProps {
     children: ReactNode;
-    titleState: boolean;
-    subTitleState: boolean;
-    onTitleToggle: () => void;
-    onSubTitleToggle: () => void;
+    styleType: {
+        title: {
+            active: boolean;
+            type: string;
+        };
+        subTitle: {
+            active: boolean;
+            type: string;
+        };
+    };
+    onToggle: {
+        titleToggle: () => void;
+        subTitleToggle: () => void;
+    };
 }
 
-export function EditorItem({
-    children,
-    titleState,
-    subTitleState,
-    onTitleToggle,
-    onSubTitleToggle
-}: EditorItemProps) {
+export function EditorItem({ children, styleType, onToggle }: EditorItemProps) {
     return (
         <PopoverRoot>
             <PopoverTrigger>{children}</PopoverTrigger>
             <PopoverPortal>
                 <PopoverContent sideOffset={5}>
+                    <PopoverArrow />
                     <ToggleRoot
                         style={{
-                            backgroundColor: titleState
+                            backgroundColor: styleType.title.active
                                 ? defaultTheme.color.highlightColor
                                 : defaultTheme.color.backgroundBase
                         }}
-                        onPressedChange={onTitleToggle}
+                        onPressedChange={onToggle.titleToggle}
                     >
                         Título
                     </ToggleRoot>
                     <ToggleRoot
                         style={{
-                            backgroundColor: subTitleState
+                            backgroundColor: styleType.subTitle.active
                                 ? defaultTheme.color.highlightColor
                                 : defaultTheme.color.backgroundBase
                         }}
-                        onPressedChange={onSubTitleToggle}
+                        onPressedChange={onToggle.subTitleToggle}
                     >
                         SubTítulo
                     </ToggleRoot>
-                    <PopoverArrow />
                 </PopoverContent>
             </PopoverPortal>
         </PopoverRoot>

@@ -14,6 +14,7 @@ import { Button } from '../Button';
 import { EditorItem } from '../EditorItem';
 
 import { Palette, TextT, TextBolder, TextItalic } from 'phosphor-react';
+import { subtle } from 'crypto';
 
 export function Config() {
     const { bannerRef, updateBannerData, bannerData, updateBannerStyle, bannerStyle } =
@@ -101,38 +102,61 @@ export function Config() {
                 <EditorTabContent value="textTab">
                     <div>
                         <EditorItem
-                            titleState={bannerStyle.boldTitle}
-                            subTitleState={bannerStyle.boldSubTitle}
-                            onTitleToggle={() =>
-                                updateBannerStyle({
-                                    ...bannerStyle,
-                                    boldTitle: !bannerStyle.boldTitle
-                                })
-                            }
-                            onSubTitleToggle={() =>
-                                updateBannerStyle({
-                                    ...bannerStyle,
-                                    boldSubTitle: !bannerStyle.boldSubTitle
-                                })
-                            }
+                            styleType={bannerStyle.bold}
+                            onToggle={{
+                                titleToggle: () =>
+                                    updateBannerStyle({
+                                        ...bannerStyle,
+                                        bold: {
+                                            ...bannerStyle.bold,
+                                            title: {
+                                                ...bannerStyle.bold.title,
+                                                active: !bannerStyle.bold.title.active
+                                            }
+                                        }
+                                    }),
+                                subTitleToggle: () =>
+                                    updateBannerStyle({
+                                        ...bannerStyle,
+                                        bold: {
+                                            ...bannerStyle.bold,
+                                            subTitle: {
+                                                ...bannerStyle.bold.subTitle,
+                                                active: !bannerStyle.bold.subTitle.active
+                                            }
+                                        }
+                                    })
+                            }}
                         >
                             <TextBolder />
                         </EditorItem>
                         <EditorItem
-                            titleState={bannerStyle.italicTitle}
-                            subTitleState={bannerStyle.italicSubTitle}
-                            onTitleToggle={() =>
-                                updateBannerStyle({
-                                    ...bannerStyle,
-                                    italicTitle: !bannerStyle.italicTitle
-                                })
-                            }
-                            onSubTitleToggle={() =>
-                                updateBannerStyle({
-                                    ...bannerStyle,
-                                    italicSubTitle: !bannerStyle.italicSubTitle
-                                })
-                            }
+                            styleType={bannerStyle.italic}
+                            onToggle={{
+                                titleToggle: () =>
+                                    updateBannerStyle({
+                                        ...bannerStyle,
+                                        italic: {
+                                            ...bannerStyle.italic,
+                                            title: {
+                                                ...bannerStyle.italic.title,
+                                                active: !bannerStyle.italic.title.active
+                                            }
+                                        }
+                                    }),
+                                subTitleToggle: () =>
+                                    updateBannerStyle({
+                                        ...bannerStyle,
+                                        italic: {
+                                            ...bannerStyle.italic,
+                                            subTitle: {
+                                                ...bannerStyle.italic.subTitle,
+                                                active: !bannerStyle.italic.subTitle
+                                                    .active
+                                            }
+                                        }
+                                    })
+                            }}
                         >
                             <TextItalic />
                         </EditorItem>

@@ -1,7 +1,6 @@
 import { Image } from 'phosphor-react';
 import { useState, useContext } from 'react';
 import { GitHubBannerContext } from 'src/context/contextGitBanner';
-import { Button } from '../Button';
 import { UploadContainer, ButtonUpload } from './styled';
 
 export function Upload() {
@@ -57,8 +56,8 @@ export function Upload() {
                     <text
                         fontSize="28"
                         fontFamily="Arial, Helvetica, sans-serif"
-                        fontStyle={bannerStyle.italicTitle ? 'italic' : 'normal'}
-                        fontWeight={bannerStyle.boldTitle ? 'bold' : 'normal'}
+                        fontStyle={bannerStyle.italic.title.active ? 'italic' : 'normal'}
+                        fontWeight={bannerStyle.bold.title.active ? 'bold' : 'normal'}
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"
                         x="50%"
@@ -71,8 +70,10 @@ export function Upload() {
                     <text
                         fontSize="22"
                         fontFamily="Arial, Helvetica, sans-serif"
-                        fontStyle={bannerStyle.italicSubTitle ? 'italic' : 'normal'}
-                        fontWeight={bannerStyle.boldSubTitle ? 'bold' : 'normal'}
+                        fontStyle={
+                            bannerStyle.italic.subTitle.active ? 'italic' : 'normal'
+                        }
+                        fontWeight={bannerStyle.bold.subTitle.active ? 'bold' : 'normal'}
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"
                         x="50%"

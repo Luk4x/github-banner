@@ -1,3 +1,5 @@
+import uploadBackground from '../../assets/upload-background.svg';
+
 export const defaultTheme = {
     color: {
         textBase: '#FFF',
@@ -5,5 +7,9 @@ export const defaultTheme = {
         backgroundLevel1: '#161B22',
         highlightColor: '#58A6FF',
         borderBase: '#E7E5DF'
+    },
+
+    background: {
+        uploadBackground
     }
 };
