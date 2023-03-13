@@ -74,7 +74,7 @@ export const CarouselPresentationHeader = styled.div`
 
 export const CarouselPresentationBody = styled.div`
     padding: 0 50px;
-    text-align: left;
+    text-align: justify;
 
     div {
         margin-top: 15px;

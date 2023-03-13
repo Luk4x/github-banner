@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <meta
                     name="keywords"
-                    content="html, css, javascript, typescript, nextjs, reactjs, npm, phosphor icons, axios, vercel analytics, luk4x, luizfelipe63"
+                    content="html, css, javascript, typescript, nextjs, reactjs, npm, phosphor icons, axios, vercel analytics, luk4x, radix ui, luizfelipe63"
                 />
                 <meta
                     property="og:description"

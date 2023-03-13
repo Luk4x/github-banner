@@ -32,21 +32,21 @@ const bannerStyleSchema = {
     bold: {
         title: {
             active: false,
-            type: 'normal'
+            type: '100'
         },
         subTitle: {
             active: false,
-            type: 'normal'
+            type: '100'
         }
     },
     italic: {
         title: {
             active: false,
-            type: 'normal'
+            type: 'italic'
         },
         subTitle: {
             active: false,
-            type: 'normal'
+            type: 'italic'
         }
     }
 };

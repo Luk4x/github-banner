@@ -55,9 +55,17 @@ export function Upload() {
                     </path>
                     <text
                         fontSize="28"
-                        fontFamily="Arial, Helvetica, sans-serif"
-                        fontStyle={bannerStyle.italic.title.active ? 'italic' : 'normal'}
-                        fontWeight={bannerStyle.bold.title.active ? 'bold' : 'normal'}
+                        fontFamily="Roboto, Arial, Helvetica, sans-serif"
+                        fontStyle={
+                            bannerStyle.italic.title.active
+                                ? bannerStyle.italic.title.type
+                                : 'normal'
+                        }
+                        fontWeight={
+                            bannerStyle.bold.title.active
+                                ? bannerStyle.bold.title.type
+                                : 'normal'
+                        }
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"
                         x="50%"
@@ -69,11 +77,17 @@ export function Upload() {
                     </text>
                     <text
                         fontSize="22"
-                        fontFamily="Arial, Helvetica, sans-serif"
+                        fontFamily="Roboto, Arial, Helvetica, sans-serif"
                         fontStyle={
-                            bannerStyle.italic.subTitle.active ? 'italic' : 'normal'
+                            bannerStyle.italic.subTitle.active
+                                ? bannerStyle.italic.subTitle.type
+                                : 'normal'
                         }
-                        fontWeight={bannerStyle.bold.subTitle.active ? 'bold' : 'normal'}
+                        fontWeight={
+                            bannerStyle.bold.subTitle.active
+                                ? bannerStyle.bold.subTitle.type
+                                : 'normal'
+                        }
                         fill="hsla(36, 95%, 85%, 1)"
                         textAnchor="middle"
                         x="50%"

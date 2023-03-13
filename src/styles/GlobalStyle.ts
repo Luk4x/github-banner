@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
+        font-weight: normal;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;

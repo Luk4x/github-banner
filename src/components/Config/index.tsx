@@ -14,11 +14,9 @@ import { Button } from '../Button';
 import { EditorItem } from '../EditorItem';
 
 import { Palette, TextT, TextBolder, TextItalic } from 'phosphor-react';
-import { subtle } from 'crypto';
 
 export function Config() {
-    const { bannerRef, updateBannerData, bannerData, updateBannerStyle, bannerStyle } =
-        useContext(GitHubBannerContext);
+    const { bannerRef, updateBannerData, bannerData } = useContext(GitHubBannerContext);
 
     const downloadSvg = async () => {
         if (bannerRef.current) {
@@ -102,61 +100,24 @@ export function Config() {
                 <EditorTabContent value="textTab">
                     <div>
                         <EditorItem
-                            styleType={bannerStyle.bold}
-                            onToggle={{
-                                titleToggle: () =>
-                                    updateBannerStyle({
-                                        ...bannerStyle,
-                                        bold: {
-                                            ...bannerStyle.bold,
-                                            title: {
-                                                ...bannerStyle.bold.title,
-                                                active: !bannerStyle.bold.title.active
-                                            }
-                                        }
-                                    }),
-                                subTitleToggle: () =>
-                                    updateBannerStyle({
-                                        ...bannerStyle,
-                                        bold: {
-                                            ...bannerStyle.bold,
-                                            subTitle: {
-                                                ...bannerStyle.bold.subTitle,
-                                                active: !bannerStyle.bold.subTitle.active
-                                            }
-                                        }
-                                    })
-                            }}
+                            availableTypes={[
+                                '100',
+                                '200',
+                                '300',
+                                '400',
+                                '500',
+                                '600',
+                                '700',
+                                '800',
+                                '900'
+                            ]}
+                            styleType="bold"
                         >
                             <TextBolder />
                         </EditorItem>
                         <EditorItem
-                            styleType={bannerStyle.italic}
-                            onToggle={{
-                                titleToggle: () =>
-                                    updateBannerStyle({
-                                        ...bannerStyle,
-                                        italic: {
-                                            ...bannerStyle.italic,
-                                            title: {
-                                                ...bannerStyle.italic.title,
-                                                active: !bannerStyle.italic.title.active
-                                            }
-                                        }
-                                    }),
-                                subTitleToggle: () =>
-                                    updateBannerStyle({
-                                        ...bannerStyle,
-                                        italic: {
-                                            ...bannerStyle.italic,
-                                            subTitle: {
-                                                ...bannerStyle.italic.subTitle,
-                                                active: !bannerStyle.italic.subTitle
-                                                    .active
-                                            }
-                                        }
-                                    })
-                            }}
+                            availableTypes={['italic', 'oblique']}
+                            styleType="italic"
                         >
                             <TextItalic />
                         </EditorItem>

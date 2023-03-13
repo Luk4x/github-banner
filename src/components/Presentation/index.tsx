@@ -15,15 +15,33 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 
 interface gitHubProps {
     repoStars: number;
+    users: {
+        luiz: {
+            name: string;
+            login: string;
+            imageUrl: string;
+            bio: string;
+            followers: number;
+            following: number;
+        };
+        luk4x: {
+            name: string;
+            login: string;
+            imageUrl: string;
+            bio: string;
+            followers: number;
+            following: number;
+        };
+    };
 }
 
-export function Presentation({ repoStars }: gitHubProps) {
+export function Presentation({ repoStars, users }: gitHubProps) {
     return (
         <PresentationContainer>
             <PresentationContent>
                 <GithubLogo size={32} />
                 <h1>Github Banner</h1>
-                <span> Crie um banner personalizado para o seu GitHub</span>
+                <span>Crie um banner personalizado para o seu GitHub</span>
                 <button>
                     <Star size={16} weight="bold" />
                     <p>Star</p> {repoStars}
@@ -37,6 +55,7 @@ export function Presentation({ repoStars }: gitHubProps) {
                 showIndicators={false}
                 infiniteLoop
                 autoPlay
+                interval={4000}
             >
                 <CarouselPresentation>
                     <CarouselPresentationHeader>
@@ -47,18 +66,15 @@ export function Presentation({ repoStars }: gitHubProps) {
                             alt=""
                         />
                         <div>
-                            <strong>Lucas</strong>
-                            <p>@luk4x</p>
+                            <strong>{users.luk4x.name}</strong>
+                            <p>{users.luk4x.login}</p>
                         </div>
                     </CarouselPresentationHeader>
                     <CarouselPresentationBody>
-                        <p>
-                            Components, icons, colors, and templates for building
-                            high-quality, accessible UI. Free and open-source.
-                        </p>
+                        <p>{users.luk4x.bio}</p>
                         <div>
-                            <span>0 Following</span>
-                            <span>2,900 Followers</span>
+                            <span>{users.luk4x.following} following</span>
+                            <span>{users.luk4x.followers} Followers</span>
                         </div>
                     </CarouselPresentationBody>
                 </CarouselPresentation>
@@ -71,18 +87,15 @@ export function Presentation({ repoStars }: gitHubProps) {
                             alt=""
                         />
                         <div>
-                            <strong>Luiz Felipe</strong>
-                            <p>@luizfelipe63</p>
+                            <strong>{users.luiz.name}</strong>
+                            <p>{users.luiz.login}</p>
                         </div>
                     </CarouselPresentationHeader>
                     <CarouselPresentationBody>
-                        <p>
-                            Components, icons, colors, and templates for building
-                            high-quality, accessible UI. Free and open-source.
-                        </p>
+                        <p>{users.luiz.bio}</p>
                         <div>
-                            <span>0 Following</span>
-                            <span>2,900 Followers</span>
+                            <span>{users.luiz.following} Following</span>
+                            <span>{users.luiz.followers} Followers</span>
                         </div>
                     </CarouselPresentationBody>
                 </CarouselPresentation>
